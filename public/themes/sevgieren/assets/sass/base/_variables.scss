@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Prompt:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --body-font:          'Prompt', sans-serif;
+    --heading-font:       'Italiana', serif;
+    
+    --primary-color:      #121111;
+    --secondary-color:    #f36a07;
+    --text-color:         #74787C;
+
+    --border-color:       #3D3D3D;
+    --border-gray:        #DEDEDE;
+    --border-dark:        #242424;
+    --light-stroke:       #E8E8E8;
+    --white-color:        #ffffff;
+    --light-color:        #F6F6F6;
+    --gray-color:         #EDEDED;
+    --gray-200:           #EFEFEF;
+    --gray-100:           #F1F1F1;
+
+    --primary-overlay:    rgba(18, 17, 17, 0.9);
+    --primary-light-overlay: rgba(18, 17, 17, 0.6);
+
+    --shadow-light:        0px 30px 23px rgba(0, 0, 0, 0.07);  
+    --box-shadow:          0px 12px 16px rgba(0, 0, 0, 0.04);
+
+    --transition-base:     all 0.3s;
+
+    --ur3-stroke:          #292828;
+}

@@ -1,0 +1,55 @@
+#product_quickview {
+    .modal-dialog {
+        max-width: 1400px;
+        .modal-content {
+            padding: 32px;
+            position: relative;
+            .btn-close {
+                position: absolute;
+                right: 10px; 
+                top: 10px;
+                outline: 0;
+                box-shadow: none;
+            }
+            .feature-image {
+                height: 100%;
+                display: flex;
+                align-items: center; 
+                justify-content: center;
+                padding: 48px;
+            }
+        }
+    }
+    @include screen-1400 {
+        .modal-dialog {
+            max-width: 1200px;
+            .modal-content {
+                .feature-image {
+                    min-height: 450px;
+                }
+                .single-product-info {
+                    margin-top: 32px;
+                }
+            }
+        }
+    }
+    @include large-screen {
+        .modal-dialog {
+            max-width: 900px;
+        }
+    }
+    @include screen-992 {
+        .modal-dialog {
+            max-width: 700px;
+        }
+    }
+    @include portrait-phone {
+        .modal-dialog {
+            .modal-content {
+                .feature-image {
+                    min-height: 300px;
+                }
+            }
+        }
+    }
+}

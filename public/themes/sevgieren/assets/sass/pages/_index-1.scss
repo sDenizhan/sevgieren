@@ -1,0 +1,560 @@
+/********************** hero section start **********************/
+.ur-hero-section {
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center center;
+    padding-top: 40px;
+    .circle-white {
+        width: 1090px;
+        height: 1090px;
+        background-color: var(--white-color);
+        right: -60px;
+        bottom: -380px;
+    }
+    @include screen-1400 {
+        .circle-white {
+            width: 900px;
+            height: 900px;
+        }
+        .circle-color {
+            max-width: 750px;
+        }
+    }
+    @include large-screen {
+        padding-top: 100px;
+    }
+    @include screen-460 {
+        .circle-color {
+            display: none;
+        }
+    }
+}
+
+.hero-title {
+    font-size: 100px;
+    line-height: 110px;
+    @include screen-1400 {
+        font-size: 90px;
+        line-height: 1.2em;
+    }
+    @include portrait-phone {
+        font-size: 70px;
+    }
+    @include screen-460 {
+        font-size: 60px;
+    }
+}
+
+.ur-hero-slider {
+    width: 1400px;
+    .slick-slide {
+        &.slick-active {
+            .hero-subtitle {
+                animation: 1s theme_fadeInUp;
+            }
+            .hero-title {
+                animation: 1.2s theme_fadeInUp;
+            }
+            .template-btn {
+                animation: 1.5s theme_fadeInUp;
+            }
+        }
+    }
+    .slick-dots {
+        text-align: center;
+        width: 40px;
+        position: absolute;
+        left: -140px; 
+        top: 50%;
+        transform: translateY(-50%);
+        li {
+            display: block;
+            line-height: 0;
+            + li {
+                margin-top: 20px;
+            }
+            button {
+                width: 22px;
+                height: 2px; 
+                background-color: var(--primary-color); 
+                opacity: 0.2;
+                font-size: 0;
+                padding: 0;
+                transition: var(--transition-base);
+            }
+            &.slick-active {
+                button {
+                    opacity: 1;
+                    width: 40px;
+                }
+            }
+        }
+    }
+    .prev-arrow, .next-arrow {
+        position: absolute;
+        left: -132px;
+        font-size: 15px;
+    }
+    .prev-arrow {
+        top: 43%;
+    }
+    .next-arrow {
+        bottom: 43%;
+    }
+    @include screen-1600 {
+        .slick-dots {
+            left: -70px;
+        }
+        .prev-arrow, .next-arrow {
+            left: -64px;
+        }
+    }
+    @include screen-1400 {
+        width: 100%;
+
+    }
+    @include screen-1260 {
+        .slick-dots {
+            display: none;
+        }
+        .prev-arrow, .next-arrow {
+            display: none;
+        }
+    }
+}
+
+
+/********************* newsletter section *****************/
+.newsletter-form {
+    padding: 7px;
+    border: 1px solid var(--border-gray);
+    input {
+        width: 100%;
+        background-color: transparent;
+        border: 0;
+        padding-left: 22px;
+        font-weight: 300;
+        &::placeholder {
+            color: var(--primary-color);
+        }
+    }
+    .primary-btn {
+        flex-shrink: 0;
+        span {
+            padding: 14px 42px;
+        }
+    }
+}
+
+/************************** category slider start **************************/
+.slider-spacing {
+    .slick-list {
+        margin: 0 -12px;
+        .slick-slide {
+            margin: 0 12px;
+        }
+    }
+}
+
+/*********************** ticker section start ******************/
+.ur-ticker-wrapper {
+    box-sizing: content-box;
+    width: 100%;
+    padding-left: 100%;
+    .ur-ticker {
+        display: inline-block;
+        white-space: nowrap;
+        padding: 26px 0;
+        animation: 30s ticker linear infinite;
+        box-sizing: content-box;
+        padding-right: 100%;
+        span {
+            font-size: 18px;
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+            transition: var(--transition-base);
+            + span {
+                margin-left: 120px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: -80px;
+                    width: 40px;
+                    height: 1px; 
+                    background-color: var(--white-color);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: var(--transition-base);
+                }
+            }
+            &:hover {
+                transform: translateY(-6px);
+                &::before {
+                    top: calc(50% + 6px);
+                }
+            }
+        }
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+}
+
+
+/************************* call to action start *****************/
+.ur-cta-section {
+    .bg-shape {
+        width: 1600px;
+        height: 500px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .shape-image {
+        right: -125px; 
+        bottom: 120px;
+    }
+    @include screen-768 {
+        .bg-shape {
+            display: none;
+        }
+    }
+}
+.ur-cta-content {
+    h2 {
+        line-height: 70px;
+    }
+    h6 {
+        line-height: 1.5em;
+    }
+    @include large-screen {
+        h2 {
+            line-height: 1.2em;
+        }
+    }
+}
+
+
+/************************* featured product slider ***********************/
+.feature-product-slider {
+    .prev-arrow, 
+    .next-arrow {
+        position: absolute;
+        right: -6px;
+        top: -90px;
+        font-size: 14px;
+        color: var(--text-color);
+        transition: var(--transition-base); 
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+    .prev-arrow {
+        right: 25px;
+        &::after {
+            content: '';
+            width: 1px;
+            height: 16px;
+            background-color: var(--primary-color);
+            position: absolute;
+            right: -6px;
+            opacity: 0.2;
+        }
+    }
+    @include portrait-phone {
+        .prev-arrow, 
+        .next-arrow {
+            right: auto;
+            bottom: -60px;
+            top: auto;
+        }
+        .prev-arrow {
+            right: auto;
+            left: calc(50% - 20px);
+        }
+        .next-arrow {
+            left: calc(50% + 14px);
+        }
+    }
+}
+
+/************************ brand slider start **********************/
+.ur-brand-slider {
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.ur-brand-single {
+    &:hover {
+        img {
+            animation: 0.4s toTopFromBottom forwards;
+        }
+    }
+}
+
+
+/*********************** blog section start *********************/
+.ur-blog-card {
+    .feature-image {
+        position: relative;
+        img {
+            transition: var(--transition-base);
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; 
+            left: -75%;
+            z-index: 2;
+            display: block;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+            transform: skewX(-25deg);
+        }
+    }
+    .explore-btn {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        text-decoration: underline;
+        &:hover {
+            color: var(--secondary-color);
+        }
+    }
+    h4 {
+        transition: var(--transition-base); 
+        &:hover {
+            color: var(--secondary-color);
+        }
+    }
+    &:hover {
+        .feature-image {
+            img {
+                transform: scale(1.1);
+            }
+            &::before {
+                animation: 0.75s shine;
+            }
+        }
+    }
+}
+
+
+/************************* feedback section start **********************/
+.feedback-section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .neaklace-shape {
+        @include screen-1400 {
+            max-width: 190px;
+        }
+    }
+}
+.ur-feedback-slider {
+    .slick-dots {
+        margin-top: 40px;
+        li {
+            width: 21px;
+            height: 21px;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            display: inline-block;
+            padding: 5px;
+            margin-right: 6px;
+            transition: var(--transition-base);
+            button {
+                width: 100%;
+                height: 100%;
+                background-color: var(--white-color);
+                border-radius: 50%;
+                padding: 0; 
+                font-size: 0;
+                display: block;
+            }
+            &.slick-active {
+                border-color: var(--white-color);
+            }
+        }
+    }
+}
+.ur-feedback-single {
+    p {
+        font-size: 18px;
+        color: var(--text-color);
+    }
+}
+
+
+/******************* deal section start *******************/
+.deal-section {
+    padding: 180px 0;
+    .dark-overlay {
+        width: calc(100% - 120px);
+        height: calc(100% - 120px);
+        position: absolute;
+        left: 50%;
+        top: 50%; 
+        transform: translate(-50%, -50%);
+        background-color: var(--border-dark);
+        z-index: -1;
+    }
+    @include screen-1400 {
+        padding: 120px 0;
+    }
+    @include screen-768 {
+        padding: 70px 0;
+    }
+}
+.ur-tab-control {
+    display: block;
+    li {
+        display: block;
+        + li {
+            margin-top: 32px;
+        }
+        a {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--white-color);
+            position: relative;
+            &::before {
+                content: ''; 
+                position: absolute;
+                left: 0; 
+                width: 0; 
+                height: 1px; 
+                background-color: var(--secondary-color);
+                bottom: 7px;
+                transition: var(--transition-base);
+            }
+            &.active {
+                padding-left: 70px;
+                color: var(--secondary-color);
+                &::before {
+                    width: 40px;
+                }   
+            }
+        }
+    }
+}
+
+/*************************** instagram slider start *******************/
+.instagram-slide-single {
+    .item-overlay {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(#000000, 0.6);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0; 
+        top: 0;
+        transition: var(--transition-base);
+        i {
+            width: 50px;
+            height: 50px;
+            background-color: var(--white-color);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            color: var(--secondary-color);
+            font-size: 18px;
+            transition: var(--transition-base);
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+    }
+}
+
+.instagram-slider {
+    .prev-arrow, .next-arrow {
+        position: absolute;
+        width: 350px;
+        height: 330px;
+        z-index: 2;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    .prev-arrow {
+        left: 40px;
+    }
+    .next-arrow {
+        right: 40px;
+    }
+    .slick-slide {
+        transform: scale(0.8);
+        transition: var(--transition-base); 
+        .instagram-slide-single {
+            .item-overlay {
+                width: 0;
+                right: 0;
+                left: auto;
+            }
+        }
+        &.slick-center {
+            transform: scale(1);
+            .instagram-slide-single {
+                .item-overlay {
+                    left: 0; 
+                    right: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include screen-1400 {
+        .prev-arrow, .next-arrow {
+            width: 290px;
+            height: 280px;
+        }
+    }
+    @include large-screen {
+        .prev-arrow, .next-arrow {
+            width: 240px;
+            height: 230px;
+        }
+    }
+    @include screen-992 {
+        .prev-arrow, .next-arrow {
+            width: 170px;
+            height: 170px;
+        }
+        .prev-arrow {
+            left: 30px;
+        }
+        .next-arrow {
+            right: 30px;
+        }
+    }
+    @include screen-768 {
+        .prev-arrow, .next-arrow {
+            display: none;
+        }
+        .slick-list {
+            margin: 0 -12px;
+        }
+        .slick-slide {
+             transform: scale(1);
+             margin: 0 12px;
+             .instagram-slide-single {
+                &:hover {
+                    .item-overlay {
+                        left: 0;
+                        right: auto; 
+                        width: 100%;
+                    }
+                }
+             }
+        }
+    }
+}

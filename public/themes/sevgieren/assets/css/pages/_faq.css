@@ -1,0 +1,20 @@
+/**************** faq page ************/
+.faq-form {
+  border: 1px solid var(--light-stroke);
+  padding: 40px 40px 80px; }
+  .faq-form input, .faq-form textarea {
+    background-color: transparent;
+    border: 1px solid var(--light-stroke);
+    margin-bottom: 20px; }
+
+.faq-accordion .accordion-item {
+  border: 0;
+  border-top: 1px solid var(--light-stroke);
+  border-bottom: 1px solid var(--light-stroke);
+  padding: 30px 0; }
+  .faq-accordion .accordion-item + .accordion-item {
+    border-top: 0; }
+  .faq-accordion .accordion-item .accordion-header a {
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 500; }

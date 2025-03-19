@@ -1,0 +1,32 @@
+/****************** banner components ****************/
+.ur2-banner-box {
+    padding: 160px 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+    .ur2-banner-title {
+        font-size: 80px;
+        line-height: 1.1em;
+    }
+    @include screen-1600 {
+        .ur2-banner-title {
+            font-size: 70px;
+        }
+    }
+    @include screen-1400 {
+        .ur2-banner-title {
+            font-size: 55px;
+        }
+    }
+    @include screen-992 {
+        .ur2-banner-title {
+            font-size: 48px;
+        }
+    }
+    @include screen-768 {
+        padding: 130px 80px;
+    }
+    @include portrait-phone {
+        padding: 120px 24px;
+    }
+}   
