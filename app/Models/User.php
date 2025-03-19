@@ -12,10 +12,10 @@ use Filament\Models\Contracts\FilamentUser;
 class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable;
-    
+
     public function canAccessFilament(): bool
     {
-        return str_ends_with($this->email, '@denizhan.me') && $this->hasVerifiedEmail();
+        return str_ends_with($this->email, '@denizhan.me');
     }
 
     /**
