@@ -181,117 +181,117 @@ final class Homepage
                                             }),
                                     ])
                             ]),
-                        Block::make('home.eight-products')
-                            ->label('8 Ürün')
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('Başlık'),
-                                Select::make('category_id')
-                                    ->label('Kategori')
-                                    ->options(function (){
-                                        $categories = [];
-                                        $cats = ProductCategory::pluck('name', 'id')->toArray();
-                                        foreach ($cats as $id => $name){
-                                            $categories[$id] = $name;
-                                        }
-                                        return $categories;
-                                    }),
-                                Select::make('order')
-                                    ->label('Sıralama')
-                                    ->options([
-                                        1 => 'Son Eklenenler',
-                                        2 => 'A-Z',
-                                    ])
-                            ]),
-                        Block::make('home.shops')
-                            ->label('Ürünler')
-                            ->columns(2)
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('Başlık')
-                                    ->required(),
-                                TextInput::make('sub_title')
-                                    ->label('Küçük Başlık')
-                                    ->required(),
-                                Fieldset::make('product')
-                                    ->label('Ürün Ayarları')
-                                    ->columns(3)
-                                    ->schema([
-                                        Select::make('type')
-                                            ->label('Gösterim Türü')
-                                            ->options([
-                                                1 => 'En Yeni Ürünler',
-                                                2 => 'En Ucuz Ürünler'
-                                            ]),
-                                        Select::make('category_id')
-                                            ->label('Kategori')
-                                            ->options(function (){
-                                                $categories = [];
-                                                $categories[0] = 'Hepsi';
-                                                $cats = ProductCategory::pluck('name', 'id')->toArray();
-                                                foreach ($cats as $id => $name){
-                                                    $categories[$id] = $name;
-                                                }
-                                                return $categories;
-                                            })
-                                            ->default(0),
-                                        TextInput::make('count')
-                                            ->label('Ürün Adeti')
-                                            ->default(10)
-                                            ->required(),
-                                    ])
-                            ]),
-                        Block::make('home.posts')
-                            ->label('Blog Yazıları')
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('Başlık'),
-                                TextInput::make('subtiltle')
-                                    ->label('Alt Metin'),
-                                TextInput::make('count')
-                                    ->label('Yazı Adeti')
-                                    ->default(3),
-                            ]),
-                        Block::make('home.gallery')
-                            ->label('Galeri')
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('Başlık'),
-                                FileUpload::make('image')
-                                    ->label('Resim Yükle')
-                                    ->columnSpan(2)
-                                    ->multiple()
-                                    ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file):string {
-                                        return $file->getClientOriginalName();
-                                    }),
-                            ]),
-                        Block::make('home.testimonials')
-                            ->label('Müşteri Yorumları')
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('Başlık'),
-                                FileUpload::make('image')
-                                    ->label('Resim Yükle (836 x 751) ')
-                                    ->columnSpan(2)
-                                    ->multiple()
-                                    ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file):string {
-                                        return $file->getClientOriginalName();
-                                    }),
-                                Repeater::make('comments')
-                                    ->label('Yorumlar')
-                                    ->createItemButtonLabel('Yeni Ekle')
-                                    ->columns(2)
-                                    ->schema([
-                                        TextInput::make('name')
-                                            ->label('Ad Soyad')
-                                            ->columnSpan(2)
-                                            ->required(),
-                                        Textarea::make('comment')
-                                            ->label('Yorum')
-                                            ->columnSpan(2)
-                                            ->required(),
-                            ])
-                    ])
+//                        Block::make('home.eightproduct')
+//                            ->label('8 Ürün')
+//                            ->schema([
+//                                TextInput::make('title')
+//                                    ->label('Başlık'),
+//                                Select::make('category_id')
+//                                    ->label('Kategori')
+//                                    ->options(function (){
+//                                        $categories = [];
+//                                        $cats = ProductCategory::pluck('name', 'id')->toArray();
+//                                        foreach ($cats as $id => $name){
+//                                            $categories[$id] = $name;
+//                                        }
+//                                        return $categories;
+//                                    }),
+//                                Select::make('order')
+//                                    ->label('Sıralama')
+//                                    ->options([
+//                                        1 => 'Son Eklenenler',
+//                                        2 => 'A-Z',
+//                                    ])
+//                            ]),
+//                        Block::make('home.shops')
+//                            ->label('Ürünler')
+//                            ->columns(2)
+//                            ->schema([
+//                                TextInput::make('title')
+//                                    ->label('Başlık')
+//                                    ->required(),
+//                                TextInput::make('sub_title')
+//                                    ->label('Küçük Başlık')
+//                                    ->required(),
+//                                Fieldset::make('product')
+//                                    ->label('Ürün Ayarları')
+//                                    ->columns(3)
+//                                    ->schema([
+//                                        Select::make('type')
+//                                            ->label('Gösterim Türü')
+//                                            ->options([
+//                                                1 => 'En Yeni Ürünler',
+//                                                2 => 'En Ucuz Ürünler'
+//                                            ]),
+//                                        Select::make('category_id')
+//                                            ->label('Kategori')
+//                                            ->options(function (){
+//                                                $categories = [];
+//                                                $categories[0] = 'Hepsi';
+//                                                $cats = ProductCategory::pluck('name', 'id')->toArray();
+//                                                foreach ($cats as $id => $name){
+//                                                    $categories[$id] = $name;
+//                                                }
+//                                                return $categories;
+//                                            })
+//                                            ->default(0),
+//                                        TextInput::make('count')
+//                                            ->label('Ürün Adeti')
+//                                            ->default(10)
+//                                            ->required(),
+//                                    ])
+//                            ]),
+//                        Block::make('home.posts')
+//                            ->label('Blog Yazıları')
+//                            ->schema([
+//                                TextInput::make('title')
+//                                    ->label('Başlık'),
+//                                TextInput::make('subtiltle')
+//                                    ->label('Alt Metin'),
+//                                TextInput::make('count')
+//                                    ->label('Yazı Adeti')
+//                                    ->default(3),
+//                            ]),
+//                        Block::make('home.gallery')
+//                            ->label('Galeri')
+//                            ->schema([
+//                                TextInput::make('title')
+//                                    ->label('Başlık'),
+//                                FileUpload::make('image')
+//                                    ->label('Resim Yükle')
+//                                    ->columnSpan(2)
+//                                    ->multiple()
+//                                    ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file):string {
+//                                        return $file->getClientOriginalName();
+//                                    }),
+//                            ]),
+//                        Block::make('home.testimonials')
+//                            ->label('Müşteri Yorumları')
+//                            ->schema([
+//                                TextInput::make('title')
+//                                    ->label('Başlık'),
+//                                FileUpload::make('image')
+//                                    ->label('Resim Yükle (836 x 751) ')
+//                                    ->columnSpan(2)
+//                                    ->multiple()
+//                                    ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file):string {
+//                                        return $file->getClientOriginalName();
+//                                    }),
+//                                Repeater::make('comments')
+//                                    ->label('Yorumlar')
+//                                    ->createItemButtonLabel('Yeni Ekle')
+//                                    ->columns(2)
+//                                    ->schema([
+//                                        TextInput::make('name')
+//                                            ->label('Ad Soyad')
+//                                            ->columnSpan(2)
+//                                            ->required(),
+//                                        Textarea::make('comment')
+//                                            ->label('Yorum')
+//                                            ->columnSpan(2)
+//                                            ->required(),
+//                            ])
+//                    ])
                 ]),
             ])
         ];
