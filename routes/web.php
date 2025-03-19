@@ -21,7 +21,7 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/migrate', function(){
-    Artisan::call('migrate');
+    Artisan::call('migrate:fresh --seed');
 });
 
 Route::get('/clear/cache', function (){
